@@ -18,7 +18,7 @@ class App extends Component  {
   componentDidMount() {
     getData('ram')
     // .then(response => console.log(response))
-      .then(response => this.setState({searched: response}))
+      .then(response => this.setState({searched: response.Search}))
       .catch(error => this.setState({ error: error }))
   }
 
@@ -28,15 +28,18 @@ class App extends Component  {
 
   searchTitle(input) {
     getData(input)
-      .then(response => this.setState({searched: response}))
+      .then(response => this.setState({searched: response.Search}))
       .catch(error => this.setState({ error: error }))
   }
 
   render () {
     return (
       <div>
-        <SearchBar handleSearchEntry={this.handleSearchEntry}/> 
-        <Films />
+        <SearchBar 
+            handleSearchEntry={this.handleSearchEntry}
+            searchTitle={this.searchTitle}
+            /> 
+        <Films searched={this.state.searched}/>
       </div>
     );
   }

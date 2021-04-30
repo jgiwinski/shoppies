@@ -1,7 +1,8 @@
 import './App.css';
 import React, { Component } from 'react'
 import { getData } from '../../api'; 
-import SearchBar from '../SearchBar/SearchBar'
+import SearchBar from '../SearchBar/SearchBar'; 
+import Films from '../Films/Films'; 
 
 class App extends Component  {
   constructor() {
@@ -25,11 +26,17 @@ class App extends Component  {
     this.setState({ searchField: event.target.value });
   }
 
+  searchTitle(input) {
+    getData(input)
+      .then(response => this.setState({searched: response}))
+      .catch(error => this.setState({ error: error }))
+  }
+
   render () {
     return (
       <div>
         <SearchBar handleSearchEntry={this.handleSearchEntry}/> 
-
+        <Films />
       </div>
     );
   }

@@ -16,20 +16,23 @@ class App extends Component  {
   }
 
   componentDidMount() {
-    getData('ram')
-    // .then(response => console.log(response))
-      .then(response => this.setState({searched: response.Search}))
+    getData("ram")
+      .then(response => this.setState({ searched: response.Search }))
       .catch(error => this.setState({ error: error }))
   }
 
   handleSearchEntry = event => {
     this.setState({ searchField: event.target.value });
+    console.log(this.state.searchField)
   }
 
-  searchTitle(input) {
-    getData(input)
-      .then(response => this.setState({searched: response.Search}))
-      .catch(error => this.setState({ error: error }))
+  searchTitle(event) {
+    event.preventDefault(); 
+    // if(!this.state.error){
+      getData("nobody")
+        .then(response => this.setState({ searched: response.Search }))
+        .catch(error => this.setState({ error: error }))
+    // }
   }
 
   render () {

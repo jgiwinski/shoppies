@@ -1,5 +1,6 @@
 import React from 'react';
-import Movie from '../Movie/Movie'
+import Movie from '../Movie/Movie';
+import './films.css';
 
 const Films = ({ searched }) => {
     const searchedFilms = searched.map(film => {
@@ -13,7 +14,9 @@ const Films = ({ searched }) => {
     }
     )
     return (
-        <h1>{searchedFilms}</h1>
+       <section className="gridDisplay">
+           {searchedFilms}
+       </section>
     )
 }
 export default Films;

@@ -1,0 +1,10 @@
+.nominated-container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1.5em;
+    border: solid 5px rgb(35, 40, 88);
+    border-radius: 10px;
+    height: 150px; 
+    box-shadow: 0 0 .75em #808080;
+}

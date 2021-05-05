@@ -6,6 +6,7 @@ const Films = ({ searched, nominateFilm }) => {
     const searchedFilms = searched.map(film => {
         return (
             <Movie
+                key={film.imdbID}
                 title={film.Title}
                 year={film.Year}
                 poster={film.Poster}

@@ -40,9 +40,20 @@ class App extends Component  {
 
   nominateFilm = (event) => {
     event.preventDefault() 
-    console.log(event.target.id)
-    this.setState({ nominatedFilms: [...this.state.nominatedFilms, event.target.id]})
-    console.log(this.state.nominatedFilms)
+    const nominee = this.state.searched.find(film => film.imdbID === event.target.id)
+    console.log(nominee.imdbID)
+    if(!this.state.nominatedFilms.includes(nominee.imdbID)){
+      this.setState({ nominatedFilms: [...this.state.nominatedFilms, nominee]})
+    } else {
+      console.log("looks like you already nominated this film")
+    }
+  }
+
+  removeFilm = (event) => {
+    event.preventDefault()
+    // const nominee = this.state.nominatedFilms.find(film => film.imdbID === event.target.id)
+    const updatedFilms = this.state.nominatedFilms.filter(film =>film.imdbID !== event.target.id )
+    this.setState({ nominatedFilms: updatedFilms })
   }
 
   render () {
@@ -53,7 +64,10 @@ class App extends Component  {
             handleSearchEntry={this.handleSearchEntry}
             searchTitle={this.searchTitle}
             /> 
-        <Nominated />
+        <Nominated 
+            nominatedFilms={this.state.nominatedFilms}
+            removeFilm={this.removeFilm}
+            />
         <Films 
             searched={this.state.searched}
             nominateFilm={this.nominateFilm}

@@ -11,9 +11,10 @@ class App extends Component  {
     super();
     this.state = {
       searched: [],
-      nominatedFilms: '',
-      error: '',
-      searchField: ''
+      nominatedFilms: [],
+      searchField: '',
+      selected: '', 
+      error: ''
     }
   }
 
@@ -28,13 +29,20 @@ class App extends Component  {
     console.log(this.state.searchField)
   }
 
-  searchTitle(event) {
+  searchTitle = (event) => {
     event.preventDefault(); 
-    // if(!this.state.error){
-      getData("nobody")
-        .then(response => this.setState({ searched: response.Search }))
+    if(!this.state.error){
+      getData(this.state.searchField)
+        .then(data => this.setState({ searched: data.Search }))
         .catch(error => this.setState({ error: error }))
-    // }
+    }
+  }
+
+  nominateFilm = (event) => {
+    event.preventDefault() 
+    console.log(event.target.id)
+    this.setState({ nominatedFilms: [...this.state.nominatedFilms, event.target.id]})
+    console.log(this.state.nominatedFilms)
   }
 
   render () {
@@ -46,7 +54,10 @@ class App extends Component  {
             searchTitle={this.searchTitle}
             /> 
         <Nominated />
-        <Films searched={this.state.searched}/>
+        <Films 
+            searched={this.state.searched}
+            nominateFilm={this.nominateFilm}
+            />
       </div>
     );
   }

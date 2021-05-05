@@ -21,4 +21,9 @@
     color: white;
     font-size: larger;
     margin: 10px; 
+    transition: all .3s ease-in-out;
+}
+
+.nominate-btn:hover {
+    transform: scale(1.2); ;
 }

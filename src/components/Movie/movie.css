@@ -27,3 +27,7 @@
 .nominate-btn:hover {
     transform: scale(1.2); ;
 }
+
+.nominate-btn:focus {
+    background-color: rgb(105, 11, 11);
+}

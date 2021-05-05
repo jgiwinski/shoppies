@@ -51,8 +51,7 @@ class App extends Component  {
 
   removeFilm = (event) => {
     event.preventDefault()
-    // const nominee = this.state.nominatedFilms.find(film => film.imdbID === event.target.id)
-    const updatedFilms = this.state.nominatedFilms.filter(film =>film.imdbID !== event.target.id )
+    const updatedFilms = this.state.nominatedFilms.filter(film => film.imdbID !== event.target.id )
     this.setState({ nominatedFilms: updatedFilms })
   }
 

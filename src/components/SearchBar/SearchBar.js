@@ -1,7 +1,7 @@
 import React from 'react';
 import './searchBar.css'; 
 
-const Searchbar = ({ handleSearchEntry, searchTitle, searchField }) => {
+const SearchBar = ({ handleSearchEntry, searchTitle, searchField }) => {
     return (
         <form className="search-container ">
             <input className="search-bar"
@@ -15,4 +15,4 @@ const Searchbar = ({ handleSearchEntry, searchTitle, searchField }) => {
         </form>
     )
 }
-export default Searchbar;
+export default SearchBar;

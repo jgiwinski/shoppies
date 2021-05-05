@@ -11,7 +11,7 @@ class App extends Component  {
     super();
     this.state = {
       searched: [],
-      nominatedFilms: '',
+      nominatedFilms: [],
       error: '',
       searchField: ''
     }
@@ -28,13 +28,13 @@ class App extends Component  {
     console.log(this.state.searchField)
   }
 
-  searchTitle(event) {
+  searchTitle = (event) => {
     event.preventDefault(); 
-    // if(!this.state.error){
+    if(!this.state.error){
       getData("nobody")
-        .then(response => this.setState({ searched: response.Search }))
+        .then(data => this.setState({ searched: data.Search }))
         .catch(error => this.setState({ error: error }))
-    // }
+    }
   }
 
   render () {

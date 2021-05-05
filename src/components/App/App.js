@@ -12,8 +12,9 @@ class App extends Component  {
     this.state = {
       searched: [],
       nominatedFilms: [],
-      error: '',
-      searchField: ''
+      searchField: '',
+      selected: '', 
+      error: ''
     }
   }
 
@@ -37,6 +38,13 @@ class App extends Component  {
     }
   }
 
+  nominateFilm = (event) => {
+    event.preventDefault() 
+    console.log(event.target.id)
+    this.setState({ nominatedFilms: [...this.state.nominatedFilms, event.target.id]})
+    console.log(this.state.nominatedFilms)
+  }
+
   render () {
     return (
       <div>
@@ -46,7 +54,10 @@ class App extends Component  {
             searchTitle={this.searchTitle}
             /> 
         <Nominated />
-        <Films searched={this.state.searched}/>
+        <Films 
+            searched={this.state.searched}
+            nominateFilm={this.nominateFilm}
+            />
       </div>
     );
   }

@@ -31,7 +31,7 @@ class App extends Component  {
   searchTitle = (event) => {
     event.preventDefault(); 
     if(!this.state.error){
-      getData("nobody")
+      getData(this.state.searchField)
         .then(data => this.setState({ searched: data.Search }))
         .catch(error => this.setState({ error: error }))
     }

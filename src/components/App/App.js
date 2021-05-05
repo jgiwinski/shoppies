@@ -1,7 +1,9 @@
 import './App.css';
 import React, { Component } from 'react'
 import { getData } from '../../api'; 
+import Header from '../Header/Header'; 
 import SearchBar from '../SearchBar/SearchBar'; 
+import Nominated from '../Nominated/Nominated'; 
 import Films from '../Films/Films'; 
 
 class App extends Component  {
@@ -38,10 +40,12 @@ class App extends Component  {
   render () {
     return (
       <div>
+        <Header />
         <SearchBar 
             handleSearchEntry={this.handleSearchEntry}
             searchTitle={this.searchTitle}
             /> 
+        <Nominated />
         <Films searched={this.state.searched}/>
       </div>
     );

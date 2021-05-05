@@ -1,0 +1,24 @@
+.movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+    border: solid 3px  rgb(35, 40, 88);
+    border-radius: 10px;
+ }
+
+.movie-title {
+    font-size: xx-large;
+    margin: 0; 
+}
+
+.nominate-btn {
+    background-color: rgb(35, 40, 88);
+    height: 45px;
+    width: 50%; 
+    border-radius: 10px;
+    color: white;
+    font-size: larger;
+    margin: 10px; 
+}

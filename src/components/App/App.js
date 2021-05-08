@@ -46,16 +46,19 @@ class App extends Component  {
     if(!this.state.nominatedFilms.includes(nominee.imdbID) && this.state.nominatedFilms.length < 5 ){
       this.setState({ nominatedFilms: [...this.state.nominatedFilms, nominee]})
       disableButton.disabled = true; 
-      console.log(this.state.nominatedFilms.length)
       if (this.state.nominatedFilms.length > 3){
         Swal.fire(
-          'Solid Choices',
           'You nominated 5 films!',
+          'Solid Choices!',
           'success'
         )
       }
     } else {
-      console.log('you already added 5 films')
+      Swal.fire(
+        'Looks like you already nominated 5 films',
+        'Try removing a film from your nominee list before adding this film',
+        'warning'
+      )
     }
   }
 

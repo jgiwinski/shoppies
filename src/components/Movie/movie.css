@@ -28,6 +28,7 @@
     transform: scale(1.2); ;
 }
 
-.nominate-btn:focus {
-    background-color: rgb(105, 11, 11);
+.nominate-btn:disabled {
+    background-color: rgb(236, 236, 236);
+    color: gray; 
 }

@@ -2,8 +2,6 @@ import React from 'react';
 import './movie.css'; 
 
 const Movie = ({ title, year, poster, imdbID, nominateFilm }) => {
-    
-    const disableButton = document.querySelector('.nominate-btn')
 
     return (
         <div className="movie">

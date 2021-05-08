@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar'; 
 import Nominated from '../Nominated/Nominated'; 
 import Films from '../Films/Films'; 
+import Swal from 'sweetalert2'
 
 class App extends Component  {
   constructor() {
@@ -41,10 +42,20 @@ class App extends Component  {
   nominateFilm = (event) => {
     event.preventDefault();
     const nominee = this.state.searched.find(film => film.imdbID === event.target.id)
+    const disableButton = document.getElementById(nominee.imdbID)
     if(!this.state.nominatedFilms.includes(nominee.imdbID) && this.state.nominatedFilms.length < 5 ){
       this.setState({ nominatedFilms: [...this.state.nominatedFilms, nominee]})
+      disableButton.disabled = true; 
+      console.log(this.state.nominatedFilms.length)
+      if (this.state.nominatedFilms.length > 3){
+        Swal.fire(
+          'Solid Choices',
+          'You nominated 5 films!',
+          'success'
+        )
+      }
     } else {
-      console.log("looks like you already nominated this film")
+      console.log('you already added 5 films')
     }
   }
 

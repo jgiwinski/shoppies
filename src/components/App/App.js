@@ -39,10 +39,9 @@ class App extends Component  {
   }
 
   nominateFilm = (event) => {
-    event.preventDefault() 
+    event.preventDefault();
     const nominee = this.state.searched.find(film => film.imdbID === event.target.id)
-    console.log(nominee.imdbID)
-    if(!this.state.nominatedFilms.includes(nominee.imdbID)){
+    if(!this.state.nominatedFilms.includes(nominee.imdbID) && this.state.nominatedFilms.length < 5 ){
       this.setState({ nominatedFilms: [...this.state.nominatedFilms, nominee]})
     } else {
       console.log("looks like you already nominated this film")
@@ -77,3 +76,10 @@ class App extends Component  {
 }
 
 export default App;
+
+// conditional rendering for nominated movies (message for when there are no movies suggested)
+// error handling for when user tries to add the same movie twice
+// error handling for when there is no movie to display ("plz enter at at least three characters")
+// disable nominate button after movie has been nominated 
+// limit 5 movies to be  added to nomination list
+// make banner when 5 nominations have been added 

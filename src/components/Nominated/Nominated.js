@@ -60,10 +60,12 @@ const Nominated = ({ nominatedFilms, removeFilm }) => {
     })
 
     return (
-        <section className="nominated-container">
-            <h1>nominted goes here</h1>
-            {nominatedTitles}
-        </section>
+        <div className="nominated-container">
+            <h1 className="nominated-box-title">Nominated Films</h1>
+            <section className="nominated-films">
+                {nominatedTitles}
+            </section>
+        </div>
     )
 }
 

@@ -36,7 +36,7 @@ class App extends Component  {
       getData(this.state.searchField)
         .then(data => this.setState({ searched: data.Search }))
         .catch(error => this.setState({ error: error }))
-    }
+    }  
   }
 
   nominateFilm = (event) => {
@@ -46,6 +46,7 @@ class App extends Component  {
     if(!this.state.nominatedFilms.includes(nominee.imdbID) && this.state.nominatedFilms.length < 5 ){
       this.setState({ nominatedFilms: [...this.state.nominatedFilms, nominee]})
       disableButton.disabled = true; 
+      console.log(nominee)
       if (this.state.nominatedFilms.length > 3){
         Swal.fire(
           'You nominated 5 films!',
@@ -64,7 +65,7 @@ class App extends Component  {
 
   removeFilm = (event) => {
     event.preventDefault()
-    const updatedFilms = this.state.nominatedFilms.filter(film => film.imdbID !== event.target.id )
+    const updatedFilms = this.state.nominatedFilms.filter(film => film.imdbID !== event.target.id)
     this.setState({ nominatedFilms: updatedFilms })
   }
 
@@ -92,8 +93,4 @@ class App extends Component  {
 export default App;
 
 // conditional rendering for nominated movies (message for when there are no movies suggested)
-// error handling for when user tries to add the same movie twice
 // error handling for when there is no movie to display ("plz enter at at least three characters")
-// disable nominate button after movie has been nominated 
-// limit 5 movies to be  added to nomination list
-// make banner when 5 nominations have been added 

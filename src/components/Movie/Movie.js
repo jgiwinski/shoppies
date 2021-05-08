@@ -1,5 +1,6 @@
 import React from 'react';
 import './movie.css'; 
+import PropTypes from 'prop-types';
 
 const Movie = ({ title, year, poster, imdbID, nominateFilm }) => {
 
@@ -12,4 +13,14 @@ const Movie = ({ title, year, poster, imdbID, nominateFilm }) => {
         </div>
     )
 }
+
 export default Movie;
+
+
+Movie.propTypes = {
+    title: PropTypes.string, 
+    year: PropTypes.string, 
+    poster: PropTypes.string,
+    imdbID: PropTypes.string,
+    nominateFilm: PropTypes.func
+}

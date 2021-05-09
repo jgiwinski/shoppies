@@ -37,12 +37,11 @@
 
 @media screen and (max-width: 600px) {
     
-  .submit-btn {
-    width: 23%;
-  }
+    .submit-btn {
+      width: 23%;
+    }
 
-  .search-container {
-    padding: 10px;
-  }
-    
+    .search-container {
+      padding: 10px;
+    }
   }

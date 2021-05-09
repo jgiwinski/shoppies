@@ -14,7 +14,6 @@ class App extends Component  {
       searched: [],
       nominatedFilms: [],
       searchField: '',
-      selected: '', 
       error: ''
     }
   }
@@ -27,11 +26,14 @@ class App extends Component  {
 
   handleSearchEntry = event => {
     this.setState({ searchField: event.target.value });
-    console.log(this.state.searchField)
+    // getData(this.state.searchField)
+    //     .then(data => this.setState({ searched: data.Search }))
+    //     .catch(error => this.setState({ error: error }))
   }
 
-  searchTitle = (event) => {
+  searchTitle = event => {
     event.preventDefault(); 
+
     if(!this.state.error){
       getData(this.state.searchField)
         .then(data => this.setState({ searched: data.Search }))
@@ -39,14 +41,14 @@ class App extends Component  {
     }  
   }
 
-  nominateFilm = (event) => {
+  nominateFilm = event => {
     event.preventDefault();
     const nominee = this.state.searched.find(film => film.imdbID === event.target.id)
     const disableButton = document.getElementById(nominee.imdbID)
+
     if(!this.state.nominatedFilms.includes(nominee.imdbID) && this.state.nominatedFilms.length < 5 ){
       this.setState({ nominatedFilms: [...this.state.nominatedFilms, nominee]})
       disableButton.disabled = true; 
-      console.log(nominee)
       if (this.state.nominatedFilms.length > 3){
         Swal.fire(
           'You nominated 5 films!',
@@ -63,8 +65,8 @@ class App extends Component  {
     }
   }
 
-  removeFilm = (event) => {
-    event.preventDefault()
+  removeFilm = event => {
+    event.preventDefault();
     const updatedFilms = this.state.nominatedFilms.filter(film => film.imdbID !== event.target.id)
     this.setState({ nominatedFilms: updatedFilms })
   }
@@ -94,3 +96,6 @@ export default App;
 
 // conditional rendering for nominated movies (message for when there are no movies suggested)
 // error handling for when there is no movie to display ("plz enter at at least three characters")
+// responsiveness
+// readme 
+// deploy 

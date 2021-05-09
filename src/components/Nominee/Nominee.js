@@ -3,6 +3,7 @@ import './nominee.css';
 import PropTypes from 'prop-types';
 
 const Nominee = ({ title, year, id, removeFilm }) => {
+    
     return (
         <div className="nominee-container">
             <h2 className="movie-title">{title}</h2>

@@ -4,6 +4,7 @@ import './films.css';
 import PropTypes from 'prop-types';
 
 const Films = ({ searched, nominateFilm }) => {
+    
     const searchedFilms = searched.map(film => {
             return (
                 <Movie

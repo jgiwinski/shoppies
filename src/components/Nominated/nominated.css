@@ -12,6 +12,7 @@
 
 .nominated-films {
     margin: 20px;
+    padding: 20px; 
     width: 90%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);

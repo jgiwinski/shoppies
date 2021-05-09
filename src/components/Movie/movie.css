@@ -27,3 +27,8 @@
 .nominate-btn:hover {
     transform: scale(1.2); ;
 }
+
+.nominate-btn:disabled {
+    background-color: rgb(236, 236, 236);
+    color: gray; 
+}

@@ -1,5 +1,19 @@
 .nominated-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nominated-box-title {
+    font-family: 'Fugaz One', cursive;
+    margin-bottom: 5px; 
+}
+
+.nominated-films {
     margin: 20px;
+    padding: 20px; 
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1.5em;

@@ -1,0 +1,17 @@
+.nominee-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    align-items: center;
+    text-align: center;
+}
+
+.movie-year {
+    margin: 3px; 
+}
+
+.remove-btn {
+    background-color: rgb(105, 11, 11);
+    color: white; 
+    border-radius: 10px;
+}

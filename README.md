@@ -2,7 +2,7 @@
 
 A movie nomination webpage that can search OMDB for movies, and allows the user to save their favorite films they feel should be up for nomination. 
 
-![home view](https://github.com/jgiwinski/the-shoppies/blob/main/src/home-shot.png)
+![home view](https://github.com/jgiwinski/shoppies/blob/main/src/img/home-shot.png)
 
 # - [DEPLOYED APP](https://shoppies-c7507xe93-jgiwinski.vercel.app/) - 
 
@@ -45,13 +45,13 @@ The goal of this challenge was to create a webpage that can search OMDB for movi
 
 Once visiting the webpage the user will be greeted with a minimalist design and can start interacting with the app. Upon pageload several movies have already been populated to show to the user. The user has the option to nominate any of the chosen films on the page. If none of the films are worthy of nomination then the user has the option to search any movie title with the search bar at the top of the screen. After searching a new title the user can nominate any of the populated films. After selecting five films the user will be notified by a popup announcing they have nominated 5 films. 
 
-![home](https://github.com/jgiwinski/the-shoppies/blob/main/src/shoppies-func.gif)
+![home](https://github.com/jgiwinski/shoppies/blob/main/src/img/shoppies-func.gif)
 
 Should the user change their mind about their nominated films, they have the option to remove any of the films from the nominee list. Once there is an option spot on the list the user can select a new film to nominate. If the user tries to nominate a sixth film they will be stopped and warned that there are already 5 nominations on the nominee list. 
 
 
 The app is also responseive and can be viewed on mobile, tablet, and desktop. 
-![responsiveness](https://github.com/jgiwinski/the-shoppies/blob/main/src/responsiveness.gif)
+![responsiveness](https://github.com/jgiwinski/shoppies/blob/main/src/img/responsiveness.gif)
 
 ## Future Iterations 
 

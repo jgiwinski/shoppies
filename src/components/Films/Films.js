@@ -19,7 +19,7 @@ const Films = ({ searched, nominateFilm }) => {
     })
 
     return (
-       <section className="gridDisplay">
+       <section className="grid-display">
            {searchedFilms}
        </section>
     )

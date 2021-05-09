@@ -23,3 +23,26 @@
     font-size: larger;
     margin: 10px; 
   }
+
+  @media screen and (max-width: 1100px) {
+
+    .search-bar {
+        width: 65%;
+    }
+
+    .submit-btn {
+      width: 15%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+  .submit-btn {
+    width: 23%;
+  }
+
+  .search-container {
+    padding: 10px;
+  }
+    
+  }

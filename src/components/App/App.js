@@ -73,7 +73,7 @@ class App extends Component  {
 
   render () {
     return (
-      <div>
+      <>
         <Header />
         <SearchBar 
             handleSearchEntry={this.handleSearchEntry}
@@ -87,7 +87,7 @@ class App extends Component  {
             searched={this.state.searched}
             nominateFilm={this.nominateFilm}
             />
-      </div>
+      </>
     );
   }
 }

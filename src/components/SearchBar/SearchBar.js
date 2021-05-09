@@ -22,5 +22,5 @@ export default SearchBar;
 SearchBar.propTypes = {
     handleSearchEntry: PropTypes.func,
     searchTitle: PropTypes.func, 
-    searchTitle: PropTypes.string
+    searchField: PropTypes.string
 }

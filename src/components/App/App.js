@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar'; 
 import Nominated from '../Nominated/Nominated'; 
 import Films from '../Films/Films'; 
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 class App extends Component  {
   constructor() {
@@ -26,14 +26,11 @@ class App extends Component  {
 
   handleSearchEntry = event => {
     this.setState({ searchField: event.target.value });
-    // getData(this.state.searchField)
-    //     .then(data => this.setState({ searched: data.Search }))
-    //     .catch(error => this.setState({ error: error }))
+    // currently the search page results do not update after each key input - relies on button for execution. 
   }
 
   searchTitle = event => {
     event.preventDefault(); 
-
     if(!this.state.error){
       getData(this.state.searchField)
         .then(data => this.setState({ searched: data.Search }))
@@ -88,14 +85,8 @@ class App extends Component  {
             nominateFilm={this.nominateFilm}
             />
       </>
-    );
+    )
   }
 }
 
 export default App;
-
-// conditional rendering for nominated movies (message for when there are no movies suggested)
-// error handling for when there is no movie to display ("plz enter at at least three characters")
-// responsiveness
-// readme 
-// deploy 
